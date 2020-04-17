@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="vue2.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <div>
+      <div>{{a}}</div>
+      <div>
+        <div>{{b}}</div>
+        <input type="text" v-model="c">
+        <div>{{add}}</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let vm = new Vue2({
+      el: '#app',
+      data: {
+        a: 3333,
+        b: 2222,
+        c: 4444
+      },
+      computed: {
+        add: function () {
+          return this.a + this.b
+        }
+      },
+      mounted() {
+        setTimeout(() => {
+          console.log('over')
+        }, 1000)
+      }
+    })
+    vm.a = 1111
+  </script>
+</body>
+
+</html>
